@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Авторизация";
+}
+
+@model LP;
+
+<form method="post" class="bg_white main_form" asp-controller="Authorization" asp-action="OnAuthorize">
+    <p class="bold_font" style="font-size:32px">Авторизация</p>
+    <input asp-for="Login" type="email" class="input margin bold_font" placeholder="Логин..." required autocomplete="off" name="login" />
+    <br/>
+    <input asp-for="Password" type="password" class="input margin bold_font" placeholder="Пароль..." required name="password"/>
+    <br/>
+    <input type="submit" class="button bold_font" style="margin-top:55px;" value="Вход" />
+    <br/>
+    <a class="text-dark subbutton" asp-controller="Authorization" asp-action="Registration">Регистрация</a>
+</form>
