@@ -19,7 +19,6 @@ namespace BankWeb.Controllers
             ViewData["Account"] = true;
             _logger = logger;
             string connString = "server = localhost;database = bank_database;user id = root;password = root;";
-            string con = "Driver={SQL Server};Server=root@localhost:3306;Database=bank_database;User=root;Password=root;";
             connection = new MySqlConnection(connString);
             connection.Open();
         }
