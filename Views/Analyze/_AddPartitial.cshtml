@@ -1,19 +1,17 @@
 ﻿@using BankWeb.Models.ViewModels;
 @{
-    ViewData["Title"] = "Регистрация";
+    ViewData["Title"] = "Регистрация сотрудника";
 }
 
 @model RegistrationItem;
 
-<form method="post" class="bg_white main_form" asp-controller="Authorization" asp-action="OnRegister">
-    <p class="bold_font" style="font-size:32px">Регистрация</p>
+<form method="post" class="bg_white main_form" asp-controller="Analyze" asp-action="OnAdd">
+    <p class="bold_font" style="font-size:32px">Регистрация нового сотрудника</p>
     <input asp-for="Login" type="email" class="input margin bold_font" placeholder="Логин..." required autocomplete="off" name="login" />
     <br/>
     <input asp-for="Password" type="password" class="input margin bold_font" placeholder="Пароль..." required name="password"/>
     <br/>
     <input asp-for="RepeatPassword" type="password" class="input margin bold_font" placeholder="Повторите пароль..." required name="repeatPassword"/>
-    <br/>
-    <input asp-for="Bank" type="text" class="input margin bold_font" placeholder="Название банка..." required name="bank"/>
     <br/>
     <input type="submit" class="button bold_font" style="margin-top:10px;" value="Регистрация" />
     <br/>

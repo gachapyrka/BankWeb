@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using BankWeb.Controllers;
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,7 +26,7 @@
                     </ul>
                         @if (User.Identity.IsAuthenticated)
                         {
-                             <a class="nav-link text-dark" asp-area="" style="align-content:end;" asp-controller="Authorization" asp-action="SingOut">Выход</a>
+                                 <a class="nav-link text-dark" asp-area="" style="align-content:end;" asp-controller="Authorization" asp-action="SingOut">Выход</a>
                         }
                         else
                         {
@@ -52,3 +53,60 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>
+
+<script>
+$(document).ready(function(){
+      let analyzeUrl = "@Html.Raw(Url.Action(nameof(AnalyzeController.AnalyzePartitial), "Analyze"))";
+              $('#Analyze').on('click', function() {
+                  $.ajax({
+                      type: 'GET',
+                      url: analyzeUrl,
+                      contentType: 'application/json',
+                      dataType: 'html',
+                      cache: false,
+                      async: true
+                  }).done(function (data) {
+                      $("#partitialPlasement").html(data);
+                  });
+              })
+       let inputUrl = "@Html.Raw(Url.Action(nameof(AnalyzeController.InputPartitial), "Analyze"))";
+              $('#Input').on('click', function() {
+                  $.ajax({
+                      type: 'GET',
+                      url: inputUrl,
+                      contentType: 'application/json',
+                      dataType: 'html',
+                      cache: false,
+                      async: true
+                  }).done(function (data) {
+                      $("#partitialPlasement").html(data);
+                  });
+              })
+       let addUrl = "@Html.Raw(Url.Action(nameof(AnalyzeController.AddPartitial), "Analyze"))";
+              $('#Add').on('click', function() {
+                  $.ajax({
+                      type: 'GET',
+                      url: addUrl,
+                      contentType: 'application/json',
+                      dataType: 'html',
+                      cache: false,
+                      async: true
+                  }).done(function (data) {
+                      $("#partitialPlasement").html(data);
+                  });
+              })
+      let helpUrl = "@Html.Raw(Url.Action(nameof(AnalyzeController.HelpPartitial), "Analyze"))";
+              $('#Help').on('click', function() {
+                  $.ajax({
+                      type: 'GET',
+                      url: helpUrl,
+                      contentType: 'application/json',
+                      dataType: 'html',
+                      cache: false,
+                      async: true
+                  }).done(function (data) {
+                      $("#partitialPlasement").html(data);
+                  });
+              })
+    });
+</script>

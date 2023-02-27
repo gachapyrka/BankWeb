@@ -6,35 +6,12 @@
 <div>
     <div class="left_content bg_white">
     <p class="bold_font" style="font-size:32px">Меню</p>
-    <button id="Analyze" class="menu_button bold_font" @*onclick="updateView('Analyze')"*@>Анализ</button>
-    <button id="Input" class="menu_button bold_font" @*onclick="updateView('Input')"*@>Ввод</button>
-    <button id="Add" class="menu_button bold_font" @*onclick="updateView('Add')"*@>Добавить сотрудника</button>
-    <button id="Help" class="menu_button bold_font" @*onclick="updateView('Help')"*@>Помощь</button>
+    <button id="Analyze" class="menu_button bold_font" onclick="id = 'Analyze'">Анализ</button>
+    <button id="Input" class="menu_button bold_font" onclick="id = 'Input'">Ввод</button>
+    <button id="Add" class="menu_button bold_font" onclick="id = 'Add'">Добавить сотрудника</button>
+    <button id="Help" class="menu_button bold_font" onclick="id = 'Help'">Помощь</button>
     </div>
     <div id="partitialPlasement" class="right_content bg_white">
 
     </div>
-    <script>
-        var url = "@Html.Raw(Url.Action(nameof(AnalyzeController.AnalyzePartitial), "Analyze"))";
-        $('#Analyze').on('click', function() {
-        $.ajax({
-            type: 'GET',
-            url: url,
-            contentType: 'application/json',
-            dataType: 'html',
-            cache: false,
-            async: true
-        }).done(function (data) {
-            $("#partitialPlasement").html(data);
-        });})
-
-        //function updateView(id){
-        //    if(id==null)id='Analyze';
-        //    document.getElementById('Analyze').disabled = false;
-        //    document.getElementById('Input').disabled = false;
-        //    document.getElementById('Add').disabled = false;
-        //    document.getElementById('Help').disabled = false;
-        //    document.getElementById(id).disabled = true;
-        //}
-    </script>
 </div>

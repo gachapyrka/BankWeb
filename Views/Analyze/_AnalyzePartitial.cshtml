@@ -1,8 +1,66 @@
-﻿@{
+﻿@using BankWeb.Models.ViewModels;
+@{
     ViewData["Title"] = "Анализ";
 }
 
-<div class="center_content">
-    <h1 class="bold_font">Анализатор ликвидности</h1>
-    <h4 class="bold_font">Из анализа в грамотную бизнес-стратегию</h4>
+@model BankViewModel;
+
+<div id="carouselExampleIndicators" class="carousel slide">
+    <div class="row">
+        
+        <div class="col">
+                <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+  </div>
+  <div class="carousel-inner" style="width:40rem; height:40rem;">
+      <div class="carousel-item active">
+                    <img style="width:40rem; height:40rem;" src="resources/@Model.States[0].state.ToImgFromState()" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block bold_font">
+                        <h5>@Model.States[0].name</h5>
+                    </div>
+      </div>
+                @for (int i = 1; i < Model.States.Count; i++)
+                {
+                        <div class="carousel-item">
+                                                                <img style="width:40rem; height:40rem;" src="resources/@Model.States[i].state.ToImgFromState()" class="d-block w-100">
+                                                                <div class="carousel-caption d-none d-md-block bold_font">
+                                                            <h5>@Model.States[i].name</h5>
+                                                        </div>
+                        </div>
+                }
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+        </div>
+    </div>
+        <div class="col">
+            <div class="bold_font">
+                <img style="width:5rem; height:5rem;" src="resources/perfect.jpg"> - Отлично
+            </div>
+            <div class="bold_font">
+                <img style="width:5rem; height:5rem;" src="resources/happy.jpg"> - Хорошо
+            </div>
+            <div class="bold_font">
+                <img style="width:5rem; height:5rem;" src="resources/normal.jpg"> - Нормально
+            </div>
+            <div class="bold_font">
+                <img style="width:5rem; height:5rem;" src="resources/bad.jpg"> - Плохо
+            </div>
+            <div class="bold_font">
+                <img style="width:5rem; height:5rem;" src="resources/terrible.jpg"> - Ужасно
+            </div>
+        </div>
+    </div>
 </div>

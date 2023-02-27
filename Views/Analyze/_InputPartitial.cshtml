@@ -1,5 +1,35 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Ввод";
 }
+
+@model Bank;
+
+<form method="post" class="bg_white main_form_input" asp-controller="Analyze" asp-action="OnInput">
+    <p class="bold_font" style="font-size:32px">Ввод данных</p>
+    <div class="bold_font">Высоколиквидные ак-вы...</div>
+    <input asp-for="HighlyLiquidAssets" type="number" class="input margin_input bold_font" placeholder="Высоколиквидные ак-вы..." required autocomplete="off" name="HighlyLiquidAssets" />
+    <div class="bold_font">Привлеченные ср-ва...</div>
+    <input asp-for="InvolvedFunds" type="number"   class="input margin_input bold_font" placeholder="Привлеченные ср-ва..." required autocomplete="off" name="InvolvedFunds" />
+    <div class="bold_font">Обязательства (до востреб.)...</div>
+    <input asp-for="DemandObligations" type="number"   class="input margin_input bold_font" placeholder="Обязательства (до востреб.)..." required autocomplete="off" name="DemandObligations" />
+    <div class="bold_font">Активы (до 30д.)...</div>
+    <input asp-for="AssetsFor30Days" type="number"  class="input margin_input bold_font" placeholder="Активы (до 30д.)..." required autocomplete="off" name="AssetsFor30Days" />
+    <div class="bold_font">Обязательства (до 30д.)...</div>
+    <input asp-for="CommitmentsFor30Days" type="number"  class="input margin_input bold_font" placeholder="Обязательства (до 30д.)..." required autocomplete="off" name="CommitmentsFor30Days" />
+    <div class="bold_font">Капитал...</div>
+    <input asp-for="Capital" type="number"  class="input margin_input bold_font" placeholder="Капитал..." required autocomplete="off" name="Capital" />
+    <div class="bold_font">Активы (> 1г.)...</div>
+    <input asp-for="AssetsMore1Year" type="number"  class="input margin_input bold_font" placeholder="Активы (> 1г.)..." required autocomplete="off" name="AssetsMore1Year" />
+    <div class="bold_font">Обязательства (> 1г.)...</div>
+    <input asp-for="CommitmentsMore1Year" type="number"  class="input margin_input bold_font" placeholder="Обязательства (> 1г.)..." required autocomplete="off" name="CommitmentsMore1Year" />
+    <div class="bold_font">Выпущенные векселя...</div>
+    <input asp-for="IssuedBills" type="number"  class="input margin_input bold_font" placeholder="Выпущенные векселя..." required autocomplete="off" name="IssuedBills" />
+    <div class="bold_font">Просроченные кредиты...</div>
+    <input asp-for="DelinquentLoans" type="number" class="input margin_input bold_font" placeholder="Просроченные кредиты..." required autocomplete="off" name="DelinquentLoans" />
+    <div class="bold_font">Ссудная задолженность...</div>
+    <input asp-for="LoanDebt" type="number" class="input margin_input bold_font" placeholder="Ссудная задолженность..." required autocomplete="off" name="LoanDebt" />
+    <div class="bold_font">Активы (риск.)...</div>
+    <input asp-for="RiskAssets" type="number"  class="input margin_input bold_font" placeholder="Активы (риск.)..." required autocomplete="off" name="RiskAssets" />
+    <br/>
+    <input type="submit" class="button bold_font" style="margin-top:30px;" value="Ввод" />
+</form>
