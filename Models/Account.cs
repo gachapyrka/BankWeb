@@ -1,6 +1,8 @@
-﻿namespace BankWeb.Models
+﻿using System.Security.Claims;
+
+namespace BankWeb.Models
 {
-    public class Account
+    public class Account : ClaimsPrincipal
     {
         public int Id { get; set; }
         public string Login { get; set; }

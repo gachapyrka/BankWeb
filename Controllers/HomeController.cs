@@ -10,6 +10,7 @@ namespace BankWeb.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
+            ViewData["Account"] = true;
             _logger = logger;
         }
 

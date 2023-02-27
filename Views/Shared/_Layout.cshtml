@@ -23,10 +23,15 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                     </ul>
-                    <a class="nav-link text-dark" asp-area="" style="align-content:end;" asp-controller="Authorization" asp-action="Index">Вход</a>
-                    <a class="nav-link text-dark" asp-area="" style="align-content:end;" asp-controller="Authorization" asp-action="Registration">Регистрация</a>
-                    <a class="nav-link text-dark" asp-area="" style="align-content:end; display:none" asp-controller="Home" asp-action="Index">Профиль</a>
-                    <a class="nav-link text-dark" asp-area="" style="align-content:end; display:none" asp-controller="Home" asp-action="Index">Выход</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                             <a class="nav-link text-dark" asp-area="" style="align-content:end;" asp-controller="Authorization" asp-action="SingOut">Выход</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link text-dark" asp-area="" style="align-content:end;" asp-controller="Authorization" asp-action="Index">Вход</a>
+                            <a class="nav-link text-dark" asp-area="" style="align-content:end;" asp-controller="Authorization" asp-action="Registration">Регистрация</a>
+                        }
                 </div>
             </div>
         </nav>
